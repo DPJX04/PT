@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="PT.MainPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="0">
+
+            <!-- Header Section with Lavender Background -->
+            <VerticalStackLayout BackgroundColor="#E6E6FA" Padding="20,20,20,15" Spacing="12">
+
+                <!-- Profile Picture and Stats Row -->
+                <Grid ColumnDefinitions="Auto,*" RowDefinitions="Auto" ColumnSpacing="15">
+
+                    <!-- ========================================================================== -->
+                    <!-- QUESTION A: Rounded profile picture with color border [2 marks]          -->
+                    <!-- ========================================================================== -->
+                    <!-- Profile Picture with Circular Purple Border -->
+                    <Border Grid.Column="0"
+                            StrokeThickness="3"
+                            Stroke="#9C27B0"
+                            StrokeShape="RoundRectangle 50"
+                            WidthRequest="90"
+                            HeightRequest="90"
+                            VerticalOptions="Start">
+                        <Image Source="owner1.jpeg" 
+                               Aspect="AspectFill"/>
+                    </Border>
+                    <!-- ========================================================================== -->
+                    <!-- END OF QUESTION A                                                         -->
+                    <!-- ========================================================================== -->
+
+                    <!-- ========================================================================== -->
+                    <!-- QUESTION C: Grid with equal width (ColumnDefinition with *) [2 marks]    -->
+                    <!-- ========================================================================== -->
+                    <!-- Stats Row with Equal Width Columns -->
+                    <Grid Grid.Column="1"
+                          ColumnDefinitions="*,*,*" 
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="Start"
+                          ColumnSpacing="0">
+
+                        <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="2">
+                            <Label Text="9" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="Black"/>
+                            <Label Text="Posts" 
+                                   FontSize="13" 
+                                   TextColor="#666" 
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="2">
+                            <Label Text="588M" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="Black"/>
+                            <Label Text="Followers" 
+                                   FontSize="13" 
+                                   TextColor="#666" 
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+
+                        <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="2">
+                            <Label Text="$22.6B" 
+                                   FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Center"
+                                   TextColor="Black"/>
+                            <Label Text="Net Worth" 
+                                   FontSize="13" 
+                                   TextColor="#666" 
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                    <!-- ========================================================================== -->
+                    <!-- END OF QUESTION C                                                         -->
+                    <!-- ========================================================================== -->
+
+                </Grid>
+
+                <!-- Profile Name and Bio -->
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="Jungkook Jeon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="Black"/>
+
+                    <Label Text="Members of BTS"
+                           FontSize="14"
+                           TextColor="#555"/>
+
+                    <Label LineBreakMode="NoWrap">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Account managed by " 
+                                      TextColor="#555" 
+                                      FontSize="14"/>
+                                <Span Text="@bighit_ent" 
+                                      TextColor="#7B68EE" 
+                                      FontSize="13"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="🔗 Free_Jungkook Golden Jewellery"
+                           FontSize="13"
+                           TextColor="#7B68EE"/>
+                </VerticalStackLayout>
+
+                <!-- ========================================================================== -->
+                <!-- QUESTION B: Expandable labels with tail truncation [3 marks]             -->
+                <!-- Using MAUI Community Toolkit Expander                                     -->
+                <!-- ========================================================================== -->
+                <toolkit:Expander x:Name="BioExpander">
+                    <toolkit:Expander.Header>
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="Jeon Jung-kook (Korean: 전정국; born September 1, 1997), known mononymously as Jungkook, is a South Korean singer"
+                                   LineBreakMode="TailTruncation"
+                                   MaxLines="2"
+                                   FontSize="14"
+                                   TextColor="#333"
+                                   HorizontalTextAlignment="Center"/>
+                            <Label Text="Read More"
+                                   FontSize="14"
+                                   TextColor="#9C27B0"
+                                   FontAttributes="Bold"
+                                   HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </toolkit:Expander.Header>
+                    <toolkit:Expander.Content>
+                        <Label Text="Jeon Jung-kook (Korean: 전정국; born September 1, 1997), known mononymously as Jungkook, is a South Korean singer and songwriter. He rose to prominence as a member and vocalist of the South Korean boy band BTS. He has performed three solo songs as part of BTS' discography— 'Begin' in 2016, 'Euphoria' in 2018, and 'My Time' in 2020—all of which charted on South Korea's Gaon Digital Chart. He also released the solo track 'Still With You' in 2020."
+                               FontSize="14"
+                               TextColor="#333"
+                               HorizontalTextAlignment="Center"
+                               Padding="0,5,0,0"/>
+                    </toolkit:Expander.Content>
+                </toolkit:Expander>
+                <!-- ========================================================================== -->
+                <!-- END OF QUESTION B                                                         -->
+                <!-- ========================================================================== -->
+
+            </VerticalStackLayout>
+
+            <!-- Highlights Section (Singles) with Images -->
+            <ScrollView Orientation="Horizontal" 
+                        HorizontalScrollBarVisibility="Never"
+                        BackgroundColor="#E6E6FA"
+                        Padding="15,0,15,15">
+                <HorizontalStackLayout Spacing="15">
+
+                    <!-- Highlight 1 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Border StrokeThickness="0" 
+                                StrokeShape="RoundRectangle 40"
+                                WidthRequest="80"
+                                HeightRequest="80">
+                            <Image Source="highlight_1.jpg" Aspect="AspectFill"/>
+                        </Border>
+                        <Label Text="Single#1" 
+                               FontSize="12" 
+                               HorizontalTextAlignment="Center"
+                               TextColor="#555"/>
+                    </VerticalStackLayout>
+
+                    <!-- Highlight 2 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Border StrokeThickness="0" 
+                                StrokeShape="RoundRectangle 40"
+                                WidthRequest="80"
+                                HeightRequest="80">
+                            <Image Source="highlight_2.jpeg" Aspect="AspectFill"/>
+                        </Border>
+                        <Label Text="Single#2" 
+                               FontSize="12" 
+                               HorizontalTextAlignment="Center"
+                               TextColor="#555"/>
+                    </VerticalStackLayout>
+
+                    <!-- Highlight 3 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Border StrokeThickness="0" 
+                                StrokeShape="RoundRectangle 40"
+                                WidthRequest="80"
+                                HeightRequest="80">
+                            <Image Source="highlight_3.jpg" Aspect="AspectFill"/>
+                        </Border>
+                        <Label Text="Single#3" 
+                               FontSize="12" 
+                               HorizontalTextAlignment="Center"
+                               TextColor="#555"/>
+                    </VerticalStackLayout>
+
+                    <!-- Highlight 4 -->
+                    <VerticalStackLayout Spacing="5">
+                        <Border StrokeThickness="0" 
+                                StrokeShape="RoundRectangle 40"
+                                WidthRequest="80"
+                                HeightRequest="80">
+                            <Image Source="highlight_4.jpg" Aspect="AspectFill"/>
+                        </Border>
+                        <Label Text="Single#4" 
+                               FontSize="12" 
+                               HorizontalTextAlignment="Center"
+                               TextColor="#555"/>
+                    </VerticalStackLayout>
+
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <!-- ========================================================================== -->
+            <!-- QUESTION D: Use Grid or CollectionView [3 marks]                         -->
+            <!-- Using Grid to display images in a 3-column layout                         -->
+            <!-- ========================================================================== -->
+            <!-- Photo Grid - 3 columns, 3 rows (No spacing for tight grid) -->
+            <Grid ColumnDefinitions="*,*,*" 
+                  RowDefinitions="Auto,Auto,Auto" 
+                  ColumnSpacing="0" 
+                  RowSpacing="0">
+
+                <!-- Row 1 -->
+                <Border Grid.Column="0" Grid.Row="0" 
+                        StrokeThickness="0">
+                    <Image Source="image1.jpeg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="0" 
+                        StrokeThickness="0">
+                    <Image Source="image2.jpg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="0" 
+                        StrokeThickness="0">
+                    <Image Source="image3.jpg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <!-- Row 2 -->
+                <Border Grid.Column="0" Grid.Row="1" 
+                        StrokeThickness="0">
+                    <Image Source="image5.jpeg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="1" 
+                        StrokeThickness="0">
+                    <Image Source="image6.jpeg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="1" 
+                        StrokeThickness="0">
+                    <Image Source="image7.jpeg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <!-- Row 3 -->
+                <Border Grid.Column="0" Grid.Row="2" 
+                        StrokeThickness="0">
+                    <Image Source="image8.jpg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="1" Grid.Row="2" 
+                        StrokeThickness="0">
+                    <Image Source="image9.jpg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+
+                <Border Grid.Column="2" Grid.Row="2" 
+                        StrokeThickness="0">
+                    <Image Source="image10.jpg" 
+                           Aspect="AspectFill"
+                           HeightRequest="140"/>
+                </Border>
+            </Grid>
+            <!-- ========================================================================== -->
+            <!-- END OF QUESTION D                                                         -->
+            <!-- ========================================================================== -->
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
